@@ -21,7 +21,6 @@
     <linkfile src="static_analysis" dest="build/static_analysis" />
   </project>
   <project path="kernel-5.15" name="kernel_xiaomi_air" remote="personal" >
-    <linkfile src="." dest=".source_date_epoch_dir" />
   </project>
   <project path="kernel/tests" name="kernel/tests" revision="main" />
   <project path="kernel/configs" name="kernel/configs" />
