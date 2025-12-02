@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote  name="aosp" fetch="https://android.googlesource.com/" review="https://android-review.googlesource.com/" />
+  <remote  name="personal" fetch="https://github.com/Koushikdey2003/" revision="air-t-oss" />
   <default revision="master-kernel-build-2022" remote="aosp" sync-j="4" />
 
   <superproject name="kernel/superproject" remote="aosp" revision="common-android13-5.15" />
@@ -19,11 +20,12 @@
     <linkfile src="abi" dest="build/abi" />
     <linkfile src="static_analysis" dest="build/static_analysis" />
   </project>
-  <project path="common" name="kernel/common" revision="android13-5.15" >
+  <project path="kernel-5.15" name="kernel_xiaomi_air" remote="personal" >
     <linkfile src="." dest=".source_date_epoch_dir" />
   </project>
   <project path="kernel/tests" name="kernel/tests" revision="main" />
   <project path="kernel/configs" name="kernel/configs" />
+  <project path="vendor/mediatek/kernel_modules" name="kernel_xiaomi_air-modules" remote="personal"/>
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="android13-5.15" />
   <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" />
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" />
